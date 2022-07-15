@@ -1,21 +1,12 @@
-import _ from 'lodash';
-import './style.css';
-import printMe from './print.js';
+import './style.css'
 
-function component() {
-  const element = document.createElement('div');
-  const btn = document.createElement('button');
-
- // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
-
-  element.appendChild(btn);
-
-  return element;
-}
-
-document.body.appendChild(component());
+const main = document.querySelector('main');
+main.innerHTML = `
+  <div class="head">
+    <h1 class="title">Today's To Do</h1>
+    <form class="form">
+      <input class="todos" type="text" placeholder="Add to your list..." required/>
+    </form>
+    <p class="delete">Clear all completed</p>
+  </div>
+`;
