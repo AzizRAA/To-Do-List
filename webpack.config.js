@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    mode:'development',
+  mode: 'development',
   entry: {
     index: './src/index.js',
     print: './src/print.js',
@@ -20,7 +20,7 @@ module.exports = {
       template: './src/index.html',
     }),
   ],
-    module: {
+  module: {
     rules: [
       {
         test: /\.css$/i,
@@ -28,7 +28,6 @@ module.exports = {
           'style-loader',
           'css-loader',
         ],
-        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
