@@ -40,6 +40,7 @@ const createList = () => {
   const trash = document.createElement('i');
   trash.className = 'far fa-trash-alt logo';
   lists.append(inputBox, listsText, trash, dots);
+  let count = 1;
  
   inputBox.addEventListener('click', () => {
     dots.classList.toggle('remove-icon-active');
