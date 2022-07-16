@@ -1,3 +1,37 @@
 .main {
   background-color: #fff;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.listInput {
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  padding: 10px;
+}
+
+p {
+  padding: 10px;
+}
+
+.remove {
+  color: #6b6b6b;
+}
+
+.remove-icon-active {
+  display: none;
+}
+
+.logo {
+  display: none;
+}
+
+.backEdit {
+  background-color: yellow;
+}
