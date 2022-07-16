@@ -26,7 +26,6 @@ main.innerHTML = `
 // Lists
 
 const createList = () => {
-
   const form = document.querySelector('.form');
   const lists = document.createElement('div');
   lists.className = 'listInput';
@@ -41,9 +40,8 @@ const createList = () => {
   const trash = document.createElement('i');
   trash.className = 'far fa-trash-alt logo';
   lists.append(inputBox, listsText, trash, dots);
-  let count = 1;
+ 
   inputBox.addEventListener('click', () => {
-    
     dots.classList.toggle('remove-icon-active');
     trash.classList.toggle('logo');
     listsText.classList.toggle('listTask-disable');
@@ -65,7 +63,7 @@ const createList = () => {
     }
   });
 
-//deleteAll
+  // deleteAll
 
   const deleteInput = document.querySelector('.remove');
   deleteInput.addEventListener('click', () => {
@@ -77,7 +75,6 @@ const createList = () => {
     }
     const zero = [];
     for (let i = 0; i < bring.length; i += 1) {
-
       if (bring[i].completed === true) {
         continue;
       }
@@ -87,16 +84,14 @@ const createList = () => {
   });
 
   // Remove
-  
-  trash.addEventListener('click', () => {
 
+  trash.addEventListener('click', () => {
     form.removeChild(lists);
     const getFromLocalStorage = JSON.parse(localStorage.getItem('list'));
     const result = getFromLocalStorage.filter((word) => word.description === listsText.textContent);
     const zero = [];
 
     for (let i = 0; i < getFromLocalStorage.length; i += 1) {
-
       if (result[0].description === getFromLocalStorage[i].description) {
         continue;
       }
@@ -114,9 +109,7 @@ const createList = () => {
     boxEdit.value = listsText.textContent;
     lists.replaceChild(boxEdit, listsText);
     boxEdit.addEventListener('keypress', (e) => {
-
       if (e.key === 'Enter' && boxEdit.value) {
-
         const bring = JSON.parse(localStorage.getItem('list'));
         const result = bring.filter((word) => word.description === listsText.textContent);
         const zero = [];
@@ -138,9 +131,7 @@ const createList = () => {
 
 const todos = document.querySelector('.todos');
 todos.addEventListener('keypress', (e) => {
-
   if (e.key === 'Enter' && todos.value) {
-
     const arr = new toDo(todos.value, false, abc.length);
     abc.push(arr);
     e.preventDefault();
@@ -155,9 +146,7 @@ todos.addEventListener('keypress', (e) => {
   }
 });
 
-
 window.addEventListener('load', () => {
-
   const getFromLocalStorage = JSON.parse(localStorage.getItem('list'));
   for (let i = 0; i < getFromLocalStorage.length; i += 1) {
     createList();
